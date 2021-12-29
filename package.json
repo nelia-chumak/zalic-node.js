@@ -11,6 +11,18 @@
     "format": "prettier --check \"**/*.{js,ts,json}\"",
     "format:fix": "prettier --write \"**/*.{js,ts,json}\""
   },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged",
+      "pre-push": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "**/*.{js}": [
+      "npm run format",
+      "npm run lint"
+    ]
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/neonilakunyk/zalic-node.js.git"
@@ -35,6 +47,8 @@
     "eslint": "^8.5.0",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-prettier": "^4.0.0",
+    "husky": "^7.0.4",
+    "lint-staged": "^12.1.4",
     "prettier": "^2.5.1"
   }
 }
