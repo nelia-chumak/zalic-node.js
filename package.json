@@ -1,12 +1,11 @@
 {
   "name": "zalic-node.js",
   "version": "1.0.0",
-  "description": "",
   "engines": {
     "node": ">=14 <15",
     "npm": ">=6 <7"
   },
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
     "start": "node -r esm server.js",
     "start:dev": "nodemon -r esm server.js",
