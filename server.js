@@ -8,7 +8,7 @@ import { routes } from './src/routes';
 const server = fastify();
 
 server.register(fastifyCors, {
-  origin: ['http://localhost:3001/'],
+  origin: ['http://localhost:3001/', 'https://zalic.herokuapp.com/'],
   methods: ['GET', 'POST']
 });
 
