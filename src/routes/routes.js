@@ -4,12 +4,12 @@ import { logGet, logPost } from '../services';
 const routes = [
   {
     method: 'GET',
-    url: '/',
+    url: '/api',
     handler: run(() => logGet())
   },
   {
     method: 'POST',
-    url: '/',
+    url: '/api',
     handler: run((req) => logPost(req.body))
   }
 ];
