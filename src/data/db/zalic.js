@@ -12,8 +12,8 @@ export const connectDB = () => {
         {
           useNewUrlParser: true,
           retryWrites: true,
-          useUnifiedTopology: true
-        }
+          useUnifiedTopology: true,
+        },
       )
       .then(() => {
         return logger.info('Successfully connected to db');

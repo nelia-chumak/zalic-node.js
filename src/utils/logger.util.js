@@ -1,7 +1,7 @@
 import pino from 'pino';
 
 const logger = pino({
-  prettyPrint: true
+  prettyPrint: true,
 });
 
 export { logger };

@@ -1,17 +1,12 @@
 import { run } from '../utils';
-import { logGet, logPost } from '../services';
+import { getCurrentWeather } from '../services';
 
 const routes = [
   {
     method: 'GET',
-    url: '/api',
-    handler: run(() => logGet())
+    url: '/api/current-weather',
+    handler: run(() => getCurrentWeather()),
   },
-  {
-    method: 'POST',
-    url: '/api',
-    handler: run((req) => logPost(req.body))
-  }
 ];
 
 export { routes };

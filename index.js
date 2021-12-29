@@ -9,7 +9,7 @@ const server = fastify();
 
 server.register(fastifyCors, {
   origin: ['https://zalic.herokuapp.com/'],
-  methods: ['GET', 'POST']
+  methods: ['GET', 'POST'],
 });
 
 routes.forEach((route) => {

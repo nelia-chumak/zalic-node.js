@@ -1,4 +1,4 @@
-import { DEFAULT_MESSAGE, DEFAULT_STATUS } from './constants';
+import { DEFAULT_MESSAGE, DEFAULT_STATUS } from '../constants';
 
 class HttpError extends Error {
   constructor({ status = DEFAULT_STATUS, message = DEFAULT_MESSAGE } = {}) {
