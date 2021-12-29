@@ -19,10 +19,10 @@ routes.forEach((route) => {
 connectDB();
 
 const {
-  app: { port }
+  app: { port, host }
 } = envConfig;
 
-server.listen(port || 3000, (err) => {
+server.listen(port || 3000, host, (err) => {
   if (err) {
     logger.error(err);
     process.exit(1);
