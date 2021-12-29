@@ -5,14 +5,14 @@
     "node": ">=14 <15",
     "npm": ">=6 <7"
   },
-  "main": "server.js",
+  "main": "index.js",
   "scripts": {
-    "start": "node -r esm server.js",
-    "start:dev": "nodemon -r esm server.js",
-    "lint": "eslint \"**/*.{js,ts,json}\"",
-    "lint:fix": "eslint \"**/*.{js,ts,json} --fix\"",
-    "format": "prettier --check \"**/*.{js,ts,json}\"",
-    "format:fix": "prettier --write \"**/*.{js,ts,json}\""
+    "start": "node -r esm index.js",
+    "start:dev": "nodemon -r esm index.js",
+    "lint": "eslint \"**/*.{js,json}\"",
+    "lint:fix": "eslint \"**/*.{js,json} --fix\"",
+    "format": "prettier --check \"**/*.{js,json}\"",
+    "format:fix": "prettier --write \"**/*.{js,json}\""
   },
   "husky": {
     "hooks": {
