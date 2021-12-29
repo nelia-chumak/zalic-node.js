@@ -1,0 +1,40 @@
+{
+  "name": "zalic-node.js",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node -r esm server.js",
+    "start:dev": "nodemon -r esm server.js",
+    "lint": "eslint \"**/*.{js,ts,json}\"",
+    "lint:fix": "eslint \"**/*.{js,ts,json} --fix\"",
+    "format": "prettier --check \"**/*.{js,ts,json}\"",
+    "format:fix": "prettier --write \"**/*.{js,ts,json}\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/neonilakunyk/zalic-node.js.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/neonilakunyk/zalic-node.js/issues"
+  },
+  "homepage": "https://github.com/neonilakunyk/zalic-node.js#readme",
+  "dependencies": {
+    "dotenv": "^10.0.0",
+    "esm": "^3.2.25",
+    "fastify": "3.25.3",
+    "fastify-cors": "^6.0.2",
+    "mongoose": "^6.1.4",
+    "pino": "7.0.0-rc.1",
+    "pino-pretty": "5.1.2"
+  },
+  "devDependencies": {
+    "eslint": "^8.5.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "prettier": "^2.5.1"
+  }
+}

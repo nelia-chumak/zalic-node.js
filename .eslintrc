@@ -1,0 +1,23 @@
+{
+  "env": {
+    "es2021": true,
+    "node": true
+  },
+  "extends": ["eslint:recommended", "prettier"],
+  "plugins": ["prettier"],
+  "parserOptions": { "sourceType": "module" },
+  "rules": {
+    "prettier/prettier": 0,
+    "indent": ["error", 2, { "SwitchCase": 1 }],
+    "no-console": 1,
+    "max-len": [
+      "error",
+      {
+        "code": 120
+      }
+    ],
+    "no-plusplus": "off",
+    "no-multiple-empty-lines": 0,
+    "no-var": 0
+  }
+}

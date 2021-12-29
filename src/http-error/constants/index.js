@@ -1,0 +1,4 @@
+const DEFAULT_MESSAGE = 'Network Error';
+const DEFAULT_STATUS = 500;
+
+export { DEFAULT_MESSAGE, DEFAULT_STATUS };
