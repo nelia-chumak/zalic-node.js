@@ -8,7 +8,7 @@ import { logger } from './src/utils';
 const server = fastify();
 
 server.register(fastifyCors, {
-  origin: ['http://0.0.0.0:3001', 'https://zalic.herokuapp.com/'],
+  origin: ['https://zalic.herokuapp.com/'],
   methods: ['GET', 'POST']
 });
 
