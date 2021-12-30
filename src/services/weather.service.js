@@ -3,17 +3,30 @@ import axios from 'axios';
 import { HttpError } from '../http-error';
 import { API_URL } from '../constants';
 import { logger, getStringifiedQuery } from '../utils';
+import { Weather } from '../data/models';
 import { envConfig } from '../../env-config';
 
-const getCurrentWeather = async () => {
+const getCurrentWeather = async (city) => {
   try {
+    const weather = await Weather.findOne({ name: city });
+    if (weather) {
+      return weather;
+    }
     const response = await axios.get(
       `${API_URL}/weather?${getStringifiedQuery({
-        q: 'London',
+        q: city,
         appid: envConfig.key,
       })}`,
     );
-    return response.data;
+    if (!response || !response.data || !response.data.sys) {
+      throw Error();
+    }
+    const weatherData = {
+      ...response.data,
+      sys: { ...response.data.sys, sys_type: response.data.sys.type },
+    };
+    await Weather.create(weatherData);
+    return weatherData;
   } catch (err) {
     logger.error(err);
     throw new HttpError({
