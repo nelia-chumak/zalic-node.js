@@ -5,7 +5,7 @@ import { Statistic } from '../data/models';
 const getStatistic = async (city, period) => {
   try {
     const statistic = await Statistic.find({
-      name: city,
+      city,
       crated_at: { $gt: getTimeFromPeriod(period) },
     });
     if (!statistic) {

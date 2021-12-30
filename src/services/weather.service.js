@@ -26,7 +26,7 @@ const getCurrentWeather = async (city) => {
       sys: { ...response.data.sys, sys_type: response.data.sys.type },
     };
     await Weather.create(weatherData);
-    await Statistic.create({ name: city });
+    await Statistic.create({ city });
     return weatherData;
   } catch (err) {
     logger.error(err);
