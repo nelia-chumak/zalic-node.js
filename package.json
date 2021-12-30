@@ -44,6 +44,7 @@
     "esm": "3.2.25",
     "fastify": "3.25.3",
     "fastify-cors": "6.0.2",
+    "moment": "^2.29.1",
     "mongoose": "6.1.4",
     "pino": "7.6.2",
     "pino-pretty": "7.3.0",

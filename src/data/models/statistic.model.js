@@ -3,7 +3,7 @@ import mongoose, { Schema } from 'mongoose';
 const statisticSchema = new Schema(
   {
     city: String,
-    requests: [String],
+    created_at: { type: Date, default: Date.now },
   },
   { versionKey: false },
 );

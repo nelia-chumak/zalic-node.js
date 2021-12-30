@@ -1,23 +1,21 @@
-import axios from 'axios';
-
 import { HttpError } from '../http-error';
-import { API_URL } from '../constants';
-import { logger, getStringifiedQuery } from '../utils';
-import { envConfig } from '../../env-config';
+import { logger, getTimeFromPeriod } from '../utils';
+import { Statistic } from '../data/models';
 
-const getStatistic = async () => {
+const getStatistic = async (city, period) => {
   try {
-    const response = await axios.get(
-      `${API_URL}/weather?${getStringifiedQuery({
-        q: 'London',
-        appid: envConfig.key,
-      })}`,
-    );
-    return response.data;
+    const statistic = await Statistic.find({
+      name: city,
+      crated_at: { $gt: getTimeFromPeriod(period) },
+    });
+    if (!statistic) {
+      throw new Error();
+    }
+    return statistic.length;
   } catch (err) {
     logger.error(err);
     throw new HttpError({
-      message: 'Can not get current weather',
+      message: 'Can not get statistic',
       status: 404,
     });
   }

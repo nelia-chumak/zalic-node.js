@@ -3,7 +3,7 @@ import axios from 'axios';
 import { HttpError } from '../http-error';
 import { API_URL } from '../constants';
 import { logger, getStringifiedQuery } from '../utils';
-import { Weather } from '../data/models';
+import { Statistic, Weather } from '../data/models';
 import { envConfig } from '../../env-config';
 
 const getCurrentWeather = async (city) => {
@@ -26,6 +26,7 @@ const getCurrentWeather = async (city) => {
       sys: { ...response.data.sys, sys_type: response.data.sys.type },
     };
     await Weather.create(weatherData);
+    await Statistic.create({ name: city });
     return weatherData;
   } catch (err) {
     logger.error(err);
